@@ -59,5 +59,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Hat tip to anyone whose design template was used
+- My friends
 - Inspiration
 - etc
