@@ -17,7 +17,7 @@ const Square = () => (
     <span className="button">6</span>
     <span className="button colored">&minus;</span>
     <span className="button">1</span>
-    <span className="button">4</span>
+    <span className="button">2</span>
     <span className="button">3</span>
     <span className="button colored">+</span>
     <span className="button span_3">0</span>
