@@ -1,5 +1,7 @@
 import React from 'react';
 import './calculator.css';
+import '../logic/calculate';
+import '../logic/operate';
 
 const Square = () => (
   <div className="button-wrap">
