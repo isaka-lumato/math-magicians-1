@@ -1,3 +1,4 @@
+import React from 'react';
 import './calculator.css';
 
 const Square = () => (
@@ -25,12 +26,21 @@ const Square = () => (
   </div>
 );
 
-const Calculator = () => (
-  <div className="calc-container">
-    <div className="calc-wrap">
-      <Square />
-    </div>
-  </div>
-);
+class Calculator extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div className="calc-container">
+        <div className="calc-wrap">
+          <Square />
+        </div>
+      </div>
+    );
+  }
+}
 
 export default Calculator;
