@@ -3,12 +3,27 @@ import './calculator.css';
 import calculate from '../logic/calculate';
 
 const Calculator = () => {
-    const [calc, setCalc] = useState({
-      total: '',
-      next: '',
-      operation: '',
-    });
-  
+  const [calc, setCalc] = useState({
+    total: '',
+    next: '',
+    operation: '',
+  });
+
+  useEffect(() => {
+    const { total, next } = calc;
+    const input = document.querySelector('.input');
+    if (next !== null) {
+      input.value = next;
+    } else if (total !== null) {
+      input.value = total;
+    }
+  });
+
+  function handleClick(e) {
+    const result = calculate(calc, e.target.textContent);
+    setCalc({ ...calc, ...result });
+  }
+
   return (
     <div className="calc-container">
       <div className="calc-wrap">
