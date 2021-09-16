@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './calculator.css';
 import calculate from '../logic/calculate';
 
 const Calculator = () => {
+    const [calc, setCalc] = useState({
+      total: '',
+      next: '',
+      operation: '',
+    });
+  
   return (
     <div className="calc-container">
       <div className="calc-wrap">
