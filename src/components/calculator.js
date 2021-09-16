@@ -1,42 +1,121 @@
 import React from 'react';
 import './calculator.css';
-
-const Square = () => (
-  <div className="button-wrap">
-    <span className="button span_5">0</span>
-    <span className="button">AC</span>
-    <span className="button">+/-</span>
-    <span className="button">%</span>
-    <span className="button colored">&divide;</span>
-    <span className="button">7</span>
-    <span className="button">8</span>
-    <span className="button">9</span>
-    <span className="button colored">&times;</span>
-    <span className="button">4</span>
-    <span className="button">5</span>
-    <span className="button">6</span>
-    <span className="button colored">&minus;</span>
-    <span className="button">1</span>
-    <span className="button">2</span>
-    <span className="button">3</span>
-    <span className="button colored">+</span>
-    <span className="button span_3">0</span>
-    <span className="button">.</span>
-    <span className="button colored">=</span>
-  </div>
-);
+import calculate from '../logic/calculate';
 
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total: '',
+      next: '',
+      operation: '',
+    };
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidUpdate() {
+    const { total, next } = this.state;
+    const input = document.querySelector('.input');
+    if (next !== null) {
+      input.value = next;
+    } else if (total !== null) {
+      input.value = total;
+    }
+  }
+
+  handleClick(e) {
+    const { total, next, operation } = this.state;
+    this.setState(calculate({ total, next, operation }, e.target.textContent));
   }
 
   render() {
     return (
       <div className="calc-container">
         <div className="calc-wrap">
-          <Square />
+          <div className="button-wrap">
+            <input className="button span_5 input" placeholder="0" />
+            <button className="button" type="button" onClick={this.handleClick}>
+              AC
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              +/-
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              %
+            </button>
+            <button
+              className="button colored"
+              type="button"
+              onClick={this.handleClick}
+            >
+              ÷
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              7
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              8
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              9
+            </button>
+            <button
+              className="button colored"
+              type="button"
+              onClick={this.handleClick}
+            >
+              x
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              4
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              5
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              6
+            </button>
+            <button
+              className="button colored"
+              type="button"
+              onClick={this.handleClick}
+            >
+              -
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              1
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              2
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              3
+            </button>
+            <button
+              className="button colored"
+              type="button"
+              onClick={this.handleClick}
+            >
+              +
+            </button>
+            <button
+              className="button span_3"
+              type="button"
+              onClick={this.handleClick}
+            >
+              0
+            </button>
+            <button className="button" type="button" onClick={this.handleClick}>
+              .
+            </button>
+            <button
+              className="button colored"
+              type="button"
+              onClick={this.handleClick}
+            >
+              =
+            </button>
+          </div>
         </div>
       </div>
     );

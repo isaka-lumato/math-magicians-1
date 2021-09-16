@@ -35,3 +35,18 @@
 .colored {
   background-color: rgb(245, 131, 1);
 }
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #f1f1f1;
+}
+
+::placeholder {
+  color: #f1f1f1;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #f1f1f1;
+}
