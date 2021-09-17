@@ -4,7 +4,7 @@ import calculate from '../logic/calculate';
 
 const Calculator = () => {
   const [calc, setCalc] = useState({
-    total: '',
+    total: 0,
     next: '',
     operation: '',
   });
@@ -17,9 +17,13 @@ const Calculator = () => {
     } else if (total !== null) {
       input.value = total;
     }
-  });
+  }, [calc]);
 
   function handleClick(e) {
+    if (e.target.textContent === 'AC') {
+      const input = document.querySelector('.input');
+      input.value = 0;
+    }
     const result = calculate(calc, e.target.textContent);
     setCalc({ ...calc, ...result });
   }
