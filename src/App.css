@@ -9,6 +9,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f4f4f4;
+  font-size: 20px;
 }
 
 .site-wrapper {
@@ -93,7 +94,9 @@ body {
 }
 
 .navLink {
-  margin-right: 3rem;
+  margin-right: 2rem;
+  border-right: 2px solid #f4f4f4;
+  padding-right: 1rem;
 }
 
 .link {
@@ -108,6 +111,8 @@ body {
 
 .navLink:last-child {
   margin-right: 0;
+  border-right: none;
+  padding-right: 0;
 }
 
 .active-link {
@@ -143,6 +148,14 @@ body {
 
 .homeParagraph {
   margin-top: 2rem;
+}
+
+/* Quote Page */
+
+.quoteParagraph {
+  width: 70%;
+  margin: 3rem auto;
+  color: #2b2e4a;
 }
 
 @media (min-width: 800px) {
