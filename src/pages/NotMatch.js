@@ -1,12 +1,19 @@
 import React from 'react';
 
-const NotMatch = () => (
-  <div>
+const NotMatch = () => {
+  const style = {
+    color: 'red',
+    fontSize: '25px',
+    textAlign: 'center',
+    marginTop: '5rem',
+  };
+  return (
     <div>
-      <h1>Not Match</h1>
-      <h1>Not Match</h1>
+      <div>
+        <h1 style={style}>There is nothing on this page</h1>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default NotMatch;

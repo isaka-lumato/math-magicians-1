@@ -37,6 +37,7 @@ body {
 .calc-container {
   width: 500px;
   text-align: center;
+  box-shadow: 0 3px 7px #2b2e4a;
 }
 
 .button-wrap {
@@ -54,6 +55,7 @@ body {
   color: #2b2e4a;
   padding: 1.5rem;
   cursor: pointer;
+  box-shadow: inset 2px 2px 2px #cbced1, inset -2px -2px 2px #fff;
 }
 
 .span_5 {
