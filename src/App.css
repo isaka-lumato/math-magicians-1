@@ -1,14 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f2f2f2;
+  background-color: #f4f4f4;
+}
+
+.site-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+/* Calculator Page */
+
+.calcWrapper {
+  width: 80%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
+}
+
+.mdHeading {
+  font-size: 30px;
+  text-align: center;
+  color: #2b2e4a;
 }
 
 .calc-container {
-  width: 400px;
-  margin: 3rem auto;
+  width: 500px;
+  text-align: center;
 }
 
 .button-wrap {
@@ -23,7 +50,7 @@ body {
   border: 1px solid #ddd;
   text-align: center;
   font-size: 16px;
-  color: #333;
+  color: #2b2e4a;
   padding: 1.5rem;
   cursor: pointer;
 }
@@ -57,4 +84,92 @@ body {
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
   color: #f1f1f1;
+}
+
+/* Navbar */
+.navLinks {
+  list-style: none;
+  display: flex;
+}
+
+.navLink {
+  margin-right: 3rem;
+}
+
+.link {
+  color: #f4f4f4;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.navLink:last-child {
+  margin-right: 0;
+}
+
+.active-link {
+  color: rgb(245, 131, 1);
+}
+
+.navBar {
+  background-color: #2b2e4a;
+}
+
+.navBarWrap {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 0;
+  row-gap: 1.5rem;
+}
+
+.bigHeading {
+  color: #f4f4f4;
+  font-size: 40px;
+}
+
+/* Home Page */
+
+.homePageWrap {
+  width: 80%;
+  margin: 2rem auto;
+  color: #2b2e4a;
+}
+
+.homeParagraph {
+  margin-top: 2rem;
+}
+
+@media (min-width: 800px) {
+  .navLink:last-child {
+    margin-right: 0;
+  }
+
+  .navBarWrap {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  /* Calculator Page */
+
+  .calcWrapper {
+    flex-direction: row;
+    column-gap: 3rem;
+    margin-top: 4rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .mdHeading {
+    font-size: 30px;
+    text-align: center;
+    color: #2b2e4a;
+  }
 }

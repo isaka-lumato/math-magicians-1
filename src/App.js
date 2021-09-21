@@ -15,7 +15,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <div className="site-wrapper">
         <Navbar />
         <Switch>
           <Route exact path="/">
@@ -33,7 +33,7 @@ class App extends React.Component {
             <NotMatch />
           </Route>
         </Switch>
-      </>
+      </div>
     );
   }
 }
